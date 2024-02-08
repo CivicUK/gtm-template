@@ -1,0 +1,5 @@
+homepage: "https://www.civicuk.com/cookie-control/"
+documentation: "https://www.civicuk.com/cookie-control/documentation"
+versions:
+  - sha: de2090470e6217132798452df4f0203d53ee9673
+    changeNotes: Initial Community Release
