@@ -186,7 +186,14 @@ var config = {
                 updateConsentState({
                 'analytics_storage': 'denied',
                 });
-            }
+            },
+            vendors: [
+              {
+                name: 'Google',
+                description: 'Google Analytics is used to track website performance and user behaviour to better understand how users interact with our content.',
+                url: 'https://business.safety.google/privacy/'
+              }
+            ],
         },
         {
             name : 'marketing',
@@ -207,7 +214,14 @@ var config = {
                 'ad_personalization': 'denied',
                 'personalization_storage': 'denied'
                 });
-            }
+            },
+            vendors: [
+              {
+                name: 'Google',
+                description: 'Google Marketing Products help deliver personalised advertising and relevant content based on your browsing habits and preferences.',
+                url: 'https://business.safety.google/privacy/'
+              }
+            ],
         }
     ],
 };
