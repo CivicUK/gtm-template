@@ -222,8 +222,6 @@ const onFailure = () => {
     data.gtmOnFailure();
   };
 injectScript('https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js', onSuccess, onFailure);
-// Call data.gtmOnSuccess when the tag is finished.
-data.gtmOnSuccess();
 
 ___WEB_PERMISSIONS___
 
