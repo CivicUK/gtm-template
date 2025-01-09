@@ -1,4 +1,4 @@
-﻿___TERMS_OF_SERVICE___
+___TERMS_OF_SERVICE___
 
 By creating or modifying this file you agree to Google Tag Manager's Community
 Template Gallery Developer Terms of Service available at
@@ -132,6 +132,9 @@ ___TEMPLATE_PARAMETERS___
 ]
 
 ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
+
+const gtagSet = require('gtagSet');
+gtagSet('developer_id.dMDAwNW', true);
 
 const log = require('logToConsole');
 const makeNumber = require('makeNumber');
@@ -571,7 +574,33 @@ ___WEB_PERMISSIONS___
       "isEditedByUser": true
     },
     "isRequired": true
-  }
+  },
+  {
+      "instance": {
+        "key": {
+          "publicId": "write_data_layer",
+          "versionId": "1"
+        },
+        "param": [
+          {
+            "key": "keyPatterns",
+            "value": {
+              "type": 2,
+              "listItem": [
+                {
+                  "type": 1,
+                  "string": "developer_id.*"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "clientAnnotations": {
+        "isEditedByUser": true
+      },
+      "isRequired": true
+    }
 ]
 
 ___TESTS___
