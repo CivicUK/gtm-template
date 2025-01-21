@@ -128,7 +128,7 @@ ___TEMPLATE_PARAMETERS___
           ]
           },
     ]
-  },
+  }
 ]
 
 ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
