@@ -191,7 +191,7 @@ var config = {
             cookies: ['_ga', '_ga*', '_gid', '_gat', '__utma', '__utmt', '__utmb', '__utmc', '__utmz', '__utmv', '__cf_bm', '_cfuvid', 'auth_redirect', 'auth_xsrft', 'player', 'redirect_url_after_social_login', 'vimeo', 'vimeo_gdpr_optin', 'vuid'],
             onAccept : function(){
                 updateConsentState({
-                    'analytics_storage': 'granted',
+                'analytics_storage': 'granted
                 });
                     dataLayerPush({
                         'event': 'analytics_accept',
@@ -206,7 +206,14 @@ var config = {
                         'event': 'analytics_revoke',
                         'category': 'analytics'
                     });
-            }
+            },
+            vendors: [
+              {
+                name: 'Google',
+                description: 'Google Analytics is used to track website performance and user behaviour to better understand how users interact with our content.',
+                url: 'https://business.safety.google/privacy/'
+              }
+            ]
         },
         {
             name : 'marketing',
@@ -235,9 +242,16 @@ var config = {
                         'event': 'marketing_revoke',
                         'category': 'marketing'
                     });
-            }
-        },
-    ],
+            },
+            vendors: [
+              {
+                name: 'Google',
+                description: 'Google Marketing Products help deliver personalised advertising and relevant content based on your browsing habits and preferences.',
+                url: 'https://business.safety.google/privacy/'
+              }
+            ]
+        }
+    ]
 };
 const onSuccess = () => {
     const CookieControl = copyFromWindow('CookieControl');
