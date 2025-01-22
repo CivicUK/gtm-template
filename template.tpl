@@ -93,7 +93,7 @@ ___TEMPLATE_PARAMETERS___
         "simpleValueType": true,
         "name": "analytical",
         "type": "SELECT",
-        "defaultValue": "denied",
+        "defaultValue": "denied"
       },
       {
         "macrosInSelect": false,
@@ -111,7 +111,7 @@ ___TEMPLATE_PARAMETERS___
         "simpleValueType": true,
         "name": "marketing",
         "type": "SELECT",
-        "defaultValue": "denied",
+        "defaultValue": "denied"
       },
         {
           "type": "TEXT",
@@ -126,9 +126,9 @@ ___TEMPLATE_PARAMETERS___
                   "type": "NON_NEGATIVE_NUMBER"
               }
           ]
-          },
+          }
     ]
-  },
+  }
 ]
 
 ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
@@ -179,12 +179,12 @@ var config = {
             cookies: ['_ga', '_ga*', '_gid', '_gat', '__utma', '__utmt', '__utmb', '__utmc', '__utmz', '__utmv'],
             onAccept : function(){
                 updateConsentState({
-                'analytics_storage': 'granted',
+                'analytics_storage': 'granted'
                 });
             },
             onRevoke: function(){
                 updateConsentState({
-                'analytics_storage': 'denied',
+                'analytics_storage': 'denied'
                 });
             },
             vendors: [
@@ -193,7 +193,7 @@ var config = {
                 description: 'Google Analytics is used to track website performance and user behaviour to better understand how users interact with our content.',
                 url: 'https://business.safety.google/privacy/'
               }
-            ],
+            ]
         },
         {
             name : 'marketing',
@@ -221,9 +221,9 @@ var config = {
                 description: 'Google Marketing Products help deliver personalised advertising and relevant content based on your browsing habits and preferences.',
                 url: 'https://business.safety.google/privacy/'
               }
-            ],
+            ]
         }
-    ],
+    ]
 };
 const onSuccess = () => {
     const CookieControl = copyFromWindow('CookieControl');
@@ -515,7 +515,7 @@ ___WEB_PERMISSIONS___
                     "boolean": true
                   }
                 ]
-              },
+              }
             ]
           }
         }
