@@ -145,11 +145,7 @@ const queryPermission = require('queryPermission');
 const copyFromWindow = require('copyFromWindow');
 const createQueue = require('createQueue');
 
-let dataLayerPush = null;
-
-if (queryPermission('access_globals', 'readwrite', 'dataLayer')) {
-  dataLayerPush = createQueue('dataLayer');
-}
+let dataLayerPush  = createQueue('dataLayer');
 
 log('data', data);
 log(
