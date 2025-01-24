@@ -143,6 +143,10 @@ const updateConsentState = require('updateConsentState');
 const injectScript = require('injectScript');
 const queryPermission = require('queryPermission');
 const copyFromWindow = require('copyFromWindow');
+const createQueue = require('createQueue');
+
+let dataLayerPush  = createQueue('dataLayer');
+
 log('data', data);
 log(
     'defaultConsentState',
@@ -181,10 +185,18 @@ var config = {
                 updateConsentState({
                 'analytics_storage': 'granted'
                 });
+                dataLayerPush({
+                  'event': 'analytics_accept',
+                  'category': 'analytics'
+                });
             },
             onRevoke: function(){
                 updateConsentState({
                 'analytics_storage': 'denied'
+                });
+                dataLayerPush({
+                  'event': 'analytics_revoke',
+                  'category': 'analytics'
                 });
             },
             vendors: [
@@ -206,6 +218,10 @@ var config = {
                 'ad_personalization': 'granted',
                 'personalization_storage': 'granted'
                 });
+                dataLayerPush({
+                  'event': 'marketing_accept',
+                  'category': 'marketing'
+                });
             },
             onRevoke: function(){
                 updateConsentState({
@@ -213,6 +229,10 @@ var config = {
                 'ad_user_data': 'denied',
                 'ad_personalization': 'denied',
                 'personalization_storage': 'denied'
+                });
+                dataLayerPush({
+                  'event': 'marketing_revoke',
+                  'category': 'marketing'
                 });
             },
             vendors: [
@@ -562,6 +582,45 @@ ___WEB_PERMISSIONS___
                   {
                     "type": 1,
                     "string": "CookieControl"
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  }
+                ]
+              },
+              {
+                "type": 3,
+                "mapKey": [
+                  {
+                    "type": 1,
+                    "string": "key"
+                  },
+                  {
+                    "type": 1,
+                    "string": "read"
+                  },
+                  {
+                    "type": 1,
+                    "string": "write"
+                  },
+                  {
+                    "type": 1,
+                    "string": "execute"
+                  }
+                ],
+                "mapValue": [
+                  {
+                    "type": 1,
+                    "string": "dataLayer"
                   },
                   {
                     "type": 8,
