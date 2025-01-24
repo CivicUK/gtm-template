@@ -27,10 +27,7 @@ ___INFO___
     "WEB"
   ]
 }
-
-
 ___TEMPLATE_PARAMETERS___
-
 [
   {
     "displayName": "Cookie Control Configuration",
@@ -111,10 +108,10 @@ ___TEMPLATE_PARAMETERS___
           }
         ],
         "displayName": "Marketing cookies",
-        "defaultValue": "denied",
         "simpleValueType": true,
         "name": "marketing",
-        "type": "SELECT"
+        "type": "SELECT",
+        "defaultValue": "denied"
       },
       {
         "help": "How long to wait (in milliseconds) for an \u003cstrong\u003eUpdate\u003c/strong\u003e command before firing queued Google tags.",
@@ -185,7 +182,7 @@ var config = {
     product: data.product,
     optionalCookies: [
         {
-            name : 'Analytics', 
+            name : 'Analytics',
             label: 'Analytical Cookies',
             description: 'Analytical cookies help us to improve our website by collecting and reporting information on its usage.',
             cookies: ['_ga', '_ga*', '_gid', '_gat', '__utma', '__utmt', '__utmb', '__utmc', '__utmz', '__utmv', '__cf_bm', '_cfuvid', 'auth_redirect', 'auth_xsrft', 'player', 'redirect_url_after_social_login', 'vimeo', 'vimeo_gdpr_optin', 'vuid'],
@@ -200,7 +197,7 @@ var config = {
             },
             onRevoke: function() {
                 updateConsentState({
-                    'analytics_storage': 'denied',
+                'analytics_storage': 'denied',
                 });
                     dataLayerPush({
                         'event': 'analytics_revoke',
@@ -264,7 +261,6 @@ const onFailure = () => {
     data.gtmOnFailure();
   };
 injectScript('https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js', onSuccess, onFailure);
-
 
 ___WEB_PERMISSIONS___
 
